@@ -1,11 +1,33 @@
 <!DOCTYPE html>
 <html lang="en">
+import { Analytics } from '@vercel/analytics/next';
+
+export default function RootLayout({
+children,
+}: {
+children: React.ReactNode;
+}) {
+return (
+<html lang="en">
+
+<head>
+    <title>Next.js</title>
+</head>
+
+<body>
+    {children}
+    <Analytics />
+</body>
+
+</html>
+);
+}
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-<link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
@@ -15,7 +37,8 @@
         <div class="profile-content">
             <h2 class="profile-name">Nícolas Mota</h2>
             <p class="profile-title">Desenvolvedor Front-End <br> Desenvolvedor Web </p>
-            <p class="profile-desc">Desenvolvedor web especializado em criar sites modernos, rápidos e responsivos que geram resultados. Pensadas para encantar seu cliente desde o primeiro clique.</p>
+            <p class="profile-desc">Desenvolvedor web especializado em criar sites modernos, rápidos e responsivos que
+                geram resultados. Pensadas para encantar seu cliente desde o primeiro clique.</p>
 
             <div class="profile-stats">
                 <div class="stat">
@@ -58,5 +81,10 @@
         </div>
     </div>
     <script src="script.js"></script>
+    <script>
+        window.va = window.va || function () { (window.vaq = window.vaq || []).push(arguments); };
+    </script>
+    <script defer src="/_vercel/insights/script.js"></script>
 </body>
+
 </html>
